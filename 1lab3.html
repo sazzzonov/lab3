@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0077)https://edu.penzgtu.ru/pluginfile.php/239330/mod_resource/content/4/lab3.html -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Required meta tags always come first -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link href="./lab3_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+      <h1 class="mt-5">Задание</h1>
+     
+
+	
+
+      <button type="button" id="button_5" onclick="changeRating(5)">Всем 5</button>
+      <button type="button" class="btn btn-info" onclick="changeRating(4)">Всем 4</button>
+      <button type="button" class="btn btn-warning" onclick="changeRating(3)">Всем 3</button>
+      <button type="button" class="btn btn-danger" onclick="changeRating(2)">Всем 2</button>
+      <button type="button" class="btn btn-primary" onclick="changeRating(null)">Очистить оценки</button>
+	  
+
+
+      	<table class="table">
+		  <thead>
+		    <tr>
+		      <th scope="col">№</th>
+		      <th scope="col">ФИО</th>
+		      <th scope="col">Оценка за экзамен</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  <tr><th scope="row">1</th><td>Иванов Иван Иванович</td><td><input class="rating" type="text" placeholder="Балл" value = ""></td></tr><tr><th scope="row">2</th><td>Петров Петр Петрович</td><td><input class="rating" type="text" placeholder="Балл" value = ""></td></tr><tr><th scope="row">3</th><td>Сидоров Сидор Сидорович</td><td><input class="rating" type="text" placeholder="Балл" value = ""></td></tr></tbody>
+		</table>
+		<button type="button" id="button_avg" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="middleMark()">Подсчитать средний балл</button>
+
+
+
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">						
+					</div>
+				</div>
+			</div>
+			<p></p><p></p><p></p>
+			
+			<button onclick="document.getElementById('inp').value='test@email.ru'">Заполнить</a>
+			<input type="text" size="40" id="inp">
+</main>
+
+    <footer class="footer">
+
+    </footer>
+
+		
+
+	<script>
+	  function changeRating(value){
+	  let elem = document.getElementsByClassName('rating');
+	  console.log(elem);	  
+	  for(var i = 0;i<elem.length;i++) {
+	  elem[i].value = value; };	 	  
+	  }
+	  	 	  	  	 
+	</script>
+	<script>
+				function middleMark(){
+				x = 0;
+				let elemt = document.getElementsByClassName('rating');
+				console.log(elemt);	  
+				for(var i = 0;i<elemt.length;i++) {
+				y = parseInt(elemt[i].value, 10)
+				x = x + y; };
+				x = x/elemt.length;
+				alert(x);
+				}	  	 	  	  	 
+				</script>
+				
+	<!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="js/jquery.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+</body></html>
